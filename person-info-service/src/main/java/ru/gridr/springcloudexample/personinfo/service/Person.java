@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import java.util.UUID;
 
 /**
  * Person data
@@ -14,7 +15,7 @@ import javax.validation.constraints.NotNull;
 public class Person {
     @Id
     @GeneratedValue
-    private Long id;
+    private UUID id;
 
     /**
      * Full name
@@ -41,12 +42,8 @@ public class Person {
         this.email = email;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
