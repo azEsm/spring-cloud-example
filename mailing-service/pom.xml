@@ -24,6 +24,7 @@
         <java.version>1.8</java.version>
         <jsonrpc4j.version>1.5.3</jsonrpc4j.version>
         <person-info-service-api.version>0.0.2-SNAPSHOT</person-info-service-api.version>
+        <json-rpc-exceptions.version>0.0.1-SNAPSHOT</json-rpc-exceptions.version>
         <spring-cloud.version>Greenwich.M1</spring-cloud.version>
     </properties>
 
@@ -32,6 +33,11 @@
             <groupId>ru.gridr.spring-cloud-example</groupId>
             <artifactId>person-info-service-api</artifactId>
             <version>${person-info-service-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.gridr.spring-cloud-example</groupId>
+            <artifactId>json-rpc-exceptions</artifactId>
+            <version>${json-rpc-exceptions.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
