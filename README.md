@@ -19,6 +19,10 @@ Service provides http api for sending the emails to users. Receives users data f
 
 ## Run the application ##
 
+First you should build all the modules. To do this, run this command in the base directory:
+
+`mvn clean install`
+
 The `config-server` must be started first. To run services use `spring-boot-maven-plugin`.
 
 `cd config-server`<br />
