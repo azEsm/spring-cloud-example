@@ -1,0 +1,3 @@
+person-service:
+  eureka-id: person-info-service
+  rpc-name: PersonService.json

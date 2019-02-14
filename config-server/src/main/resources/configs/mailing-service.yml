@@ -1,0 +1,11 @@
+server:
+  port: 8878
+
+person-service:
+  eureka-id: person-info-service
+  rpc-name: PersonService.json
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

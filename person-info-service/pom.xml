@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.0.RELEASE</version>
+        <version>2.1.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -25,7 +25,7 @@
         <jsonrpc4j.version>1.5.3</jsonrpc4j.version>
         <person-info-service-api.version>0.0.2-SNAPSHOT</person-info-service-api.version>
         <json-rpc-exceptions.version>0.0.1-SNAPSHOT</json-rpc-exceptions.version>
-        <spring-cloud.version>Greenwich.M1</spring-cloud.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -56,6 +56,12 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <!-- service discovery -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
         <!-- jsonrpc4j -->

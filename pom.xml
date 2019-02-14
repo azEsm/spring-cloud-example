@@ -12,6 +12,7 @@
 
     <modules>
         <module>config-server</module>
+        <module>eureka-server</module>
         <module>json-rpc-exceptions</module>
         <module>person-info-service-api</module>
         <module>person-info-service</module>

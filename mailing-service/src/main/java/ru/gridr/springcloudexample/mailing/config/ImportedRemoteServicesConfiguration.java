@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.googlecode.jsonrpc4j.ExceptionResolver;
 import com.googlecode.jsonrpc4j.spring.JsonProxyFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.gridr.springcloudexample.jsonrpc.exceptions.JsonRpcClientExceptionResolver;
@@ -25,9 +27,12 @@ public class ImportedRemoteServicesConfiguration {
     }
 
     @Bean
-    public JsonProxyFactoryBean personServiceProxy() {
-        JsonProxyFactoryBean serviceProxy = new JsonProxyFactoryBean();
-        serviceProxy.setServiceUrl("http://localhost:8877/PersonService.json"); //TODO netflix eureka
+    public JsonProxyFactoryBean personServiceProxy(
+            DiscoveryClient discoveryClient,
+            @Value("${person-service.eureka-id}") String personServiceId,
+            @Value("${person-service.rpc-name}") String personRpcServiceName
+    ) {
+        JsonProxyFactoryBean serviceProxy = new EurekaJsonProxyFactoryBean(mapper, discoveryClient, personServiceId, personRpcServiceName);
         serviceProxy.setServiceInterface(PersonService.class);
         serviceProxy.setExceptionResolver(jsonRpcExceptionResolver()); //TODO common abstract JsonProxyFactoryBean
         return serviceProxy;
